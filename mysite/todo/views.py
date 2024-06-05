@@ -12,3 +12,9 @@ class TaskListView(LoginRequiredMixin, generic.ListView):
 
     def get_queryset(self):
         return Task.objects.filter(user=self.request.user)
+
+
+class TaskDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Task
+    context_object_name = "task"
+    template_name = "task.html"

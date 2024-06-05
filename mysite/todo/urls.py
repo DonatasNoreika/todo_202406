@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import TaskListView
+from .views import TaskListView, TaskDetailView
 
 urlpatterns = [
     path("", TaskListView.as_view(), name="tasks"),
+    path("tasks/<int:pk>", TaskDetailView.as_view(), name="task"),
 ]
