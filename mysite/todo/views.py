@@ -18,3 +18,14 @@ class TaskDetailView(LoginRequiredMixin, generic.DetailView):
     model = Task
     context_object_name = "task"
     template_name = "task.html"
+
+
+class TaskCreateView(LoginRequiredMixin, generic.CreateView):
+    model = Task
+    fields = ['title', 'summary']
+    template_name = "task_form.html"
+    success_url = "/"
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)

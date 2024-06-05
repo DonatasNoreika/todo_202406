@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block "title" %}Task Form{% endblock %}
+{% block "content" %}
+{% load crispy_forms_tags %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4">Task Create/Update</legend>
+        {{ form | crispy }}
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Save</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

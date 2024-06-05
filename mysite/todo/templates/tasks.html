@@ -3,6 +3,7 @@
 {% block "title" %}Tasks{% endblock %}
 
 {% block "content" %}
+<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'task_new' %}">New Task</a>
 {% if user.is_authenticated %}
 <h1>Tasks:</h1>
 {% for task in tasks %}
