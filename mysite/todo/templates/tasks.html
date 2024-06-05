@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block "title" %}Tasks{% endblock %}
+
+{% block "content" %}
+<h1>Tasks:</h1>
+{% for task in tasks %}
+<p>{{ task }}</p>
+<hr>
+{% endfor %}
+{% endblock %}
