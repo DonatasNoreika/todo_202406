@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block "title" %}Task Delete{% endblock %}
+{% block "content" %}
+{% load crispy_forms_tags %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %}
+        <legend class="border-bottom mb-4">Task Delete</legend>
+        <h1>Delete Task "{{ task.title }}"?</h1>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Delete</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

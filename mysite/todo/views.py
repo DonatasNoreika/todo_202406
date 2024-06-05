@@ -43,3 +43,14 @@ class TaskUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
     def test_func(self):
         task = self.get_object()
         return task.user == self.request.user
+
+
+class TaskDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
+    model = Task
+    success_url = "/"
+    context_object_name = "task"
+    template_name = "task_delete.html"
+
+    def test_func(self):
+        task = self.get_object()
+        return task.user == self.request.user

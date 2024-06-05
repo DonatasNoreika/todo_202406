@@ -9,6 +9,7 @@
 {% for task in tasks %}
 <p><a href="{% url 'task' task.pk %}">{{ task.title }}</a>
 <a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'task_update' task.pk %}">Update</a>
+    <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'task_delete' task.pk %}">Delete</a>
 </p>
 
 <hr>
