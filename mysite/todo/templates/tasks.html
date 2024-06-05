@@ -7,7 +7,10 @@
 {% if user.is_authenticated %}
 <h1>Tasks:</h1>
 {% for task in tasks %}
-<p><a href="{% url 'task' task.pk %}">{{ task.title }}</a></p>
+<p><a href="{% url 'task' task.pk %}">{{ task.title }}</a>
+<a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'task_update' task.pk %}">Update</a>
+</p>
+
 <hr>
 {% endfor %}
 {% else %}
